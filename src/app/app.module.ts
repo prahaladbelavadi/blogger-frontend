@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 
 import { PanelModule } from 'primeng/panel';
 import { ButtonModule } from 'primeng/button';
+import {MenubarModule} from 'primeng/menubar';
 import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
@@ -30,6 +31,7 @@ import { PostsComponent } from './posts/posts.component';
     PanelModule,
     ButtonModule,
     HttpClientModule,
+    MenubarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentService } from "../content.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-posts',
@@ -9,11 +10,29 @@ import { ContentService } from "../content.service";
 export class PostsComponent implements OnInit {
 
   posts;
-
-  constructor(private contentService: ContentService) { }
+ public items;
+  constructor(private contentService: ContentService, private route:Router) { }
 
   ngOnInit() {
-    this.posts = this.contentService.getAllPosts();
+    this.items = [
+      {
+        label: 'Posts',
+        icon: 'pi pi-fw pi-paperclip',
+        command: () => { this.navigateToPost(); }
+      },
+      {
+        label: 'Write',
+        icon: 'pi pi-fw pi-pencil',
+        command: () => { this.navigateToEditor(); }
+      }
+    ];
   }
 
+  navigateToPost() {
+    this.route.navigate(['posts']);
+  }
+
+  navigateToEditor() {
+    this.route.navigate(['editor']);
+  }
 }
