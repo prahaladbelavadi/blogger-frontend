@@ -9,8 +9,11 @@ export class ContentService {
   constructor(private http: HttpClient) { }
 
   getAllPosts() {
-    this.http.get('https://jsonplaceholder.typicode.com/todos/1')
-      .subscribe((response) => { console.log(response); });
+    this.http.get('https://jsonplaceholder.typicode.com/todos/')
+      .subscribe((response) => {
+        console.log('Data Fetched', response);
+        return response;
+      });
   }
 
   savePost(content) {
