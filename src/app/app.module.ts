@@ -13,11 +13,13 @@ import { FormsModule } from '@angular/forms';
 
 import { PanelModule } from 'primeng/panel';
 import { ButtonModule } from 'primeng/button';
+import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EditorComponent
+    EditorComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,7 @@ import { ButtonModule } from 'primeng/button';
     EditorModule,
     PanelModule,
     ButtonModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
